@@ -1,0 +1,309 @@
+/* BASIC SETUP */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    text-rendering: optimizeLegibility;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+
+a {
+    text-decoration: none
+}
+
+/* REUSABLE COMPONANTS */
+.wrap {
+    width: 100%;
+}
+
+.container {
+    width: 114rem;
+    margin: 0 auto;
+}
+
+/* Header section */
+.header {
+    background: #000;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.header .logo {
+        font-size: 4rem;
+        font-family: lato;
+        color: rgb(224, 255, 83);
+        margin-top: .5rem;
+        float: left;
+}
+
+.header ul{
+    float: right;
+    list-style: none;
+}
+.header ul li {
+        display: inline-block;
+        margin-top: 2rem;
+        margin-right: 3rem;
+        position: relative;
+        z-index: 1;
+ }
+
+.header ul li:last-child {
+        margin-right: 3rem;
+}
+
+.header ul li a {
+        font-size: 1.8rem;
+        color: rgb(255, 255, 255);
+        transition: .3s ease;
+}
+
+.header ul li a:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: -7%;
+        width: 114%;
+        height: 100%;
+        margin-top: .3rem;
+        border-bottom: .2rem solid #94f830;
+}
+
+.header ul li a::before {
+        position: absolute;
+        content: '';
+        background: #94f830;
+        left: -7%;
+        bottom: -12%;
+        width: 114%;
+        height: 0;
+        transition: .3s ease;
+        opacity: 0;
+        z-index: -1;
+}
+
+.header ul li:hover a::before {
+        height: 125%;
+        opacity: 1;
+}
+
+.header ul li:hover a {
+        color: #000;
+}
+
+/* end Header sectio */
+
+/* Home section */
+.home{
+    margin-top: 7rem;
+    height: 70.15rem;
+    background-color: rgb(0, 0, 0);
+}
+
+.container--home__intro {
+    height: 37rem;
+    width: 37rem;
+    margin-top: 26rem;
+    text-align: center;
+    background: #c7c403;
+    border-radius: 50%;
+    margin-left: 20rem;
+    float: left;
+}
+.container--home__intro h1{
+    margin-top: 20%;
+    font-variant: small-caps;
+}
+.container--home__intro .my-name{
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+.container--home__intro .btn{
+    background: none;
+    font-family: 'lato';
+    font-weight: 700;
+    color: #000;
+    margin-top: 5rem;
+    padding: 1rem 5rem;
+    border: .2rem rgb(31, 29, 29) solid;
+    box-shadow: .1rem .5rem 1.3rem #000;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s linear;
+}
+.container--home__intro .btn:hover{
+    color: antiquewhite;
+    z-index: 1;
+}
+.container--home__intro .btn::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: #000;
+    transition:all .3s linear;
+    transition-timing-function: cubic-bezier(.65, 1.69, .23, .47);
+    z-index: -1;
+}
+
+.container--home__intro .btn:hover::before{
+    height: 100%;
+}
+.container--home__myimage {
+    width: 50rem;
+    height: 70.15rem;
+    float: right;
+}
+.container--home__myimage img{
+    width: 50rem;
+}
+/* end home section */
+
+/* About section */
+.about{
+    height: 65rem;
+    background:linear-gradient(rgba(0, 0, 0, 0.445), rgb(0, 0, 0)), url(../assets/image/background6.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    overflow: hidden;
+}
+.container--about {
+    height: 100%;
+    color: azure;
+}
+.container--about__hl{
+    font-size: 4rem;
+    font-variant: small-caps;
+    font-weight: 700;
+    text-shadow: 0.5rem 0rem 0.7rem #94f830;
+    margin-top: 7rem;
+}
+.container--about_intro {
+    padding: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.container--about_intro span{
+    color: rgb(255, 197, 72);
+}
+.container--about__para{
+    margin-bottom: 4rem;
+    text-align: justify;
+    font-size: 2rem;
+}
+.container--about__cv{
+    margin-left: 5rem;
+}
+.container--about__cv a,
+.container--about__hire a{
+    float: left;
+    background: rgba(0, 0, 0, 0.753);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    padding: 1.5rem 5rem;
+    border: .2rem rgb(255, 218, 138) solid;
+    box-shadow: .1rem .2rem .7rem rgb(255, 253, 223);
+    cursor: pointer;
+    position: relative;
+    transition: all .1s ease;
+}
+.container--about__hire{
+    display: inline-block;
+    margin-left: 5rem;
+}
+.container--about__cv:hover a,
+.container--about__hire:hover a{
+    color:#000;
+    border: .2rem rgb(34, 32, 28) solid;
+    z-index: 1;
+}
+
+.container--about__cv a::before,
+.container--about__hire a::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: rgb(255, 220, 25);
+    transition:all .5s linear;
+    transition-timing-function: cubic-bezier(.65, 1.69, .23, .47);
+    z-index: -1;
+}
+.container--about__cv:hover a::before,
+.container--about__hire:hover a::before{
+    width: 100%;
+}
+
+/* end About section */
+
+
+
+/* About section */
+
+#contact{
+    height: 60rem;
+    background: linear-gradient(rgba(255, 229, 229, 0.815), rgb(255, 216, 216));
+    overflow: hidden;
+}
+.container--contact__heading{
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:5rem;
+    word-spacing: 2rem;
+    border: .5rem #000 inset;
+}
+.container--contact--division{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+}
+.container--contact--division__box{
+        width: 20%;
+        margin-left: 5%;
+        padding: 3rem;
+        background: rgb(219, 219, 219);
+        box-shadow: .2rem .5rem .5rem #000;
+}
+.container--contact--division__box h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    position: relative;
+}
+.container--contact--division__box h3::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom: .2rem solid #000000;
+}
+
+/* end About section */
